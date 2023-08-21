@@ -1,0 +1,19 @@
+---
+import Head from '../components/Head.astro';
+import { Navigation } from '../components/Navigation.jsx';
+import Footer from '../components/Footer.astro';
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<Head title='about | soczew' />
+	<body class="bg-black overflow-x-hidden">
+        <Navigation client:only="react" isScrollable={true}/>
+        <div class="w-screen min-h-screen absolute top-0 left-0 flex flex-col">
+            <main class="bg-white flex-grow w-screen flex flex-col">
+                <slot />
+            </main>
+            <Footer />
+        </div>
+	</body>
+</html>

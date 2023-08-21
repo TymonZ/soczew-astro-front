@@ -1,34 +1,15 @@
 ---
-import Head from '../components/Head.astro';
-import { Navigation } from '../components/Navigation.jsx';
-import Footer from '../components/Footer.astro';
+import ScrollableLayout from '../layouts/ScrollableLayout.astro'
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-	<Head title='about | soczew' />
-	<body class="bg-black overflow-x-hidden">
-        <Navigation client:only="react" isScrollable={true}/>
-        <div class="w-screen absolute top-0 left-0 flex flex-col">
-            <main class="bg-white flex-grow w-screen h-screen flex flex-col justify-center items-center">
-                <!-- <h1 class='text-6xl font-body font-normal p-5 mb-5'>
-                    ABOUT
-                </h1> 
-                <p class="font-body font-normal w-8/12">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo doloribus facere consequatur nulla optio quae in eum. Et neque molestiae dolorem soluta iusto, cupiditate mollitia odit deleniti quasi a ullam quo debitis aliquam voluptates quam animi quae aliquid commodi ipsum consequuntur. Ipsum unde ad maiores a, quae, quia delectus, deserunt ipsam blanditiis perspiciatis numquam quisquam. Excepturi exercitationem perspiciatis similique ab voluptates quo quod harum repellat nesciunt, ducimus et ullam? Molestias at libero autem id fuga dolores nulla quisquam voluptas alias asperiores modi cum quasi repellendus aliquid, quo nam reprehenderit placeat inventore laudantium error quas et? Recusandae harum reiciendis quia explicabo.
-                </p> -->
-            </main>
-            <Footer />
-        </div>
-	</body>
-</html>
-<style>
-    .inline-link {
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-    }
-    .inline-link:hover {
-        background-color: black;
-        color: white;
-    }
-</style>
+<ScrollableLayout>
+    <section class="w-full flex flex-col justify-center items-center py-20">
+        <h1 class='text-6xl font-body font-normal px-5 pb-5 mb-5'>
+            ABOUT
+        </h1> 
+        <p class="font-body font-normal w-8/12">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo doloribus facere consequatur nulla optio quae in eum. Et neque molestiae dolorem soluta iusto, cupiditate mollitia odit deleniti quasi a ullam quo debitis aliquam voluptates quam animi quae aliquid commodi ipsum consequuntur. Ipsum unde ad maiores a, quae, quia delectus, deserunt ipsam blanditiis perspiciatis numquam quisquam. Excepturi exercitationem perspiciatis similique ab voluptates quo quod harum repellat nesciunt, ducimus et ullam? Molestias at libero autem id fuga dolores nulla quisquam voluptas alias asperiores modi cum quasi repellendus aliquid, quo nam reprehenderit placeat inventore laudantium error quas et? Recusandae harum reiciendis quia explicabo.
+        </p>
+    </section>
+</ScrollableLayout>
+

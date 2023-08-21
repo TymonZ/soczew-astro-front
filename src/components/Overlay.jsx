@@ -24,7 +24,7 @@ function EventList({ events, handleEventMouseEnter }) {
 				{listItems}
 			</ol>
 			<div className="text-right font-display font-bold text-sm">
-				<a href="./store" className="hover:bg-black hover:text-white px-2" onMouseEnter={()=>handleEventMouseEnter('default')}>
+				<a href="./archive" className="hover:bg-black hover:text-white px-2" onMouseEnter={()=>handleEventMouseEnter('default')}>
 					{'> see more'}
 				</a>
 			</div>

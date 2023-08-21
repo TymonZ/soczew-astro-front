@@ -18,7 +18,7 @@ function CameraRig() {
 	const positionVec = new Vector3()
   
 	return useFrame(() => {
-		const zoom = 5-(size.width/1000)
+		const zoom = 5-(size.width/1200)
 	  	camera.position.lerp(positionVec.set(-mouse.x/3, 1-mouse.y/2, zoom), 0.05)
 	  	camera.lookAt(0, 0, 0)
 	})

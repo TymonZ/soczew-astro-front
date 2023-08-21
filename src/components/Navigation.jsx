@@ -8,21 +8,23 @@ const Header = ({ children }) => {
 	)
 }
 
-const Icon = () => {
-	return (
-		<div className="fixed z-20 top-0 right-0 h-16 w-16 mr-4 mt-6">
-			<img src="./logo/logo-black.svg"/>
-		</div>
+const ClickedMenu = ({ handleMenuClick }) => {
+	const links = [
+		{name:'> ABOUT', href:'./about'},
+		{name:'> STORE', href:'./store'},
+		{name:'> ARCHIVE', href:'./archive'},
+		{name:'> CONTACT', href:'./about#contact'},
+	]
+	const listItems = links.map((link)=>
+		<li key={link.name}>
+			<a href={link.href} onClick={handleMenuClick}>
+				<Header>{link.name}</Header>
+			</a>
+		</li>
 	)
-}
-
-const ClickedMenu = () => {
 	return (
 		<ul className="self-center">
-			<li><a href="./about"><Header>{'> ABOUT'}</Header></a></li>
-			<li><a href="./store"><Header>{'> STORE'}</Header></a></li>
-			<li><a href="./archive"><Header>{'> ARCHIVE'}</Header></a></li>
-			<li><a href="./about#contact"><Header>{'> CONTACT'}</Header></a></li>
+			{listItems}
 		</ul>	
 	)
 }
@@ -57,15 +59,11 @@ export function Navigation({ isScrollable }) {
 		backdropFilter: 'blur(20px)',
 		position: 'fixed',
 	}
-	const navScrollable = {
-		// position: 'absolute',
-		// zIndex: ''
-	}
 
 	return (
 		<nav
 			className='w-screen h-screen top-0 left-0 z-20 flex'
-			style={menuClicked ? navBlur : (isScrollable ? navScrollable : {})}
+			style={menuClicked ? navBlur : {}}
 		>
 			<div className='fixed z-20 top-0 left-0'>
 				<button onClick={handleMenuClick}>
@@ -74,8 +72,7 @@ export function Navigation({ isScrollable }) {
 					</Header>
 				</button>
 			</div>
-			{/* {isScrollable ? <Icon /> : null} */}
-			{menuClicked ? <ClickedMenu /> : (isScrollable ? null : <NotClickedMenu />)}
+			{menuClicked ? <ClickedMenu handleMenuClick={handleMenuClick}/> : (isScrollable ? null : <NotClickedMenu />)}
 		</nav>
 	)
 }

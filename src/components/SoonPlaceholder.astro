@@ -1,0 +1,16 @@
+---
+interface Props {
+	headerText: string;
+}
+
+const { headerText } = Astro.props;
+---
+
+<section class="w-full h-screen sm:h-full sm:flex-grow flex flex-col justify-center items-center">
+    <h1 class='text-6xl font-body font-normal p-5'>
+        {headerText}
+    </h1>
+    <a href="./" class="font-display hover:bg-black hover:text-white px-2">
+        > back to the main page
+    </a>
+</section>
