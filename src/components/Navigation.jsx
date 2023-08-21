@@ -2,7 +2,7 @@ import { useState } from "react"
 
 const Header = ({ children }) => {
 	return (
-		<h1 className='text-6xl font-body font-normal p-5 w-fit hover:bg-black hover:text-white'>
+		<h1 className='text-6xl font-body font-normal p-5 w-fit my-link-style'>
 			{children}
 		</h1>
 	)

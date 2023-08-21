@@ -14,6 +14,7 @@ module.exports = {
 				'soczew-green': '#5cc8a0',
 			},
 		},
+		
 	},
 	plugins: [],
 }

@@ -7,7 +7,7 @@ function EventList({ events, handleEventMouseEnter }) {
 			className="text-right font-display text-sm"
 		>
 			<span 
-				className="px-2 hover:bg-black hover:text-white"
+				className="px-2 my-link-style"
 				onMouseEnter={()=>handleEventMouseEnter(event.id)}
 			>
 				{event.name} | {event.place} | {event.date}
@@ -24,7 +24,7 @@ function EventList({ events, handleEventMouseEnter }) {
 				{listItems}
 			</ol>
 			<div className="text-right font-display font-bold text-sm">
-				<a href="./archive" className="hover:bg-black hover:text-white px-2" onMouseEnter={()=>handleEventMouseEnter('default')}>
+				<a href="./archive" className="my-link-style px-2" onMouseEnter={()=>handleEventMouseEnter('default')}>
 					{'> see more'}
 				</a>
 			</div>
