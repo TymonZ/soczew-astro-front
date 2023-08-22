@@ -22,11 +22,11 @@ function EventList({ events, handleEventMouseEnter }) {
 			<h2 className="text-right font-display font-bold text-sm px-2">
 				=== PAST EVENTS ===
 			</h2>
-			<ol className="flex flex-col-reverse justify-end">
+			<menu className="flex flex-col-reverse justify-end">
 				{listItems}
-			</ol>
+			</menu>
 			<div className="text-right font-display font-bold text-sm">
-				<a href="/archive" className="my-link-style px-2" onMouseEnter={()=>handleEventMouseEnter('default')}>
+				<a href="/events" className="my-link-style px-2" onMouseEnter={()=>handleEventMouseEnter('default')}>
 					{'> see more'}
 				</a>
 			</div>

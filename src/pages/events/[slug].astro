@@ -1,0 +1,69 @@
+---
+import { Markdown } from 'astro-remote'
+import ScrollableLayout from "../../layouts/ScrollableLayout.astro";
+import slugify from "../../scripts/slugify"
+import { EVENTS } from "../../consts";
+
+export async function getStaticPaths() {
+	const paths = EVENTS.map((event)=>{
+		return {
+			params: {slug: slugify(event.name)},
+			props: event
+		}
+	})
+	return paths
+}
+
+
+const event = Astro.props;
+const pageTitle = `${event.name} | soczew`
+const bannerSrc = `/textures/${event.id}.jpg`
+const descriptions = await Astro.glob(`../../content/*.md`)
+const EventDescription = descriptions[event.id].Content
+---
+
+<ScrollableLayout title={pageTitle}>
+	<article class="w-full flex flex-col py-[100px] sm:flex-row sm:pr-2 sm:justify-center">
+		<figure class="w-full sm:w-auto flex flex-col items-start">
+			<a href={bannerSrc}>
+				<img src={bannerSrc} alt="event poster" class="object-contain sm:max-h-[80vh]"/>
+			</a>
+			<figcaption class="hidden sm:inline font-display">
+				Poster by <a class="my-link-style" href={event.poster.author.url}>{event.poster.author.name}</a>
+			</figcaption>
+		</figure>
+		<div class="w-full sm:w-2/3 sm:min-w-[25rem] sm:max-w-xl [&>*]:p-5">
+			<header class="bg-black text-white flex flex-col gap-3">
+				<h1 class='text-2xl font-body font-normal'>
+					{event.name}
+				</h1>
+				<div class="font-display font-thin text-base text-left flex flex-row gap-2">
+					<ul>
+						<li>date:</li>
+						<li>type:</li>
+						<li>place:</li>
+						<li>tax:</li>
+					</ul>
+					<ul>
+						<li>{event.date}</li>
+						<li>{event.type}</li>
+						<li>{event.place}</li>
+						<li>{event.tax}</li>
+					</ul>
+				</div>
+				<a href={event.links.fb} class="w-fit my-link-inverted font-display font-bold text-base text-left">
+					{'> see event on facebook'}
+				</a>
+			</header>
+			<section class="flex flex-col gap-2">
+				<h2 class='text-2xl font-body font-bold '>
+					description:
+				</h2>
+				<div class="my-description-style font-paragraph">
+					<EventDescription />
+				</div>
+			</section>
+		</div>
+    </article>
+</ScrollableLayout>
+

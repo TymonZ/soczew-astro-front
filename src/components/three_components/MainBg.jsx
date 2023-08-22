@@ -46,8 +46,8 @@ function MainBg({ posterTexturePath, handlePosterClick }) {
 					<AnimatedBlock>
 						<Poster texturePath={posterTexturePath} handleClick={handlePosterClick} />	
 					</AnimatedBlock>
-					<ambientLight intensity={0.3} />
-					<spotLight position={[10, 20, 10]} angle={0.5} power={9000} />
+					<ambientLight intensity={0} />
+					<spotLight position={[10, 10, 10]} angle={0.5} power={4500} />
 					<CameraRig />
 				</Suspense>
 				<Preload all />

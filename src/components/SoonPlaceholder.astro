@@ -6,11 +6,11 @@ interface Props {
 const { headerText } = Astro.props;
 ---
 
-<section class="w-full h-screen sm:h-full sm:flex-grow flex flex-col justify-center items-center">
+<article class="w-full h-screen sm:h-full sm:flex-grow flex flex-col justify-center items-center">
     <h1 class='text-6xl font-body font-normal p-5'>
         {headerText}
     </h1>
-    <a href="/" class="my-link-style sm:hover:bg-black sm:hover:text-white font-display px-2">
+    <a href="/" class="my-link-style font-display px-2">
         {'> back to the main page'}
     </a>
-</section>
+</article>

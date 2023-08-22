@@ -1,4 +1,5 @@
 import { useState } from "react"
+import { BiLogoInstagram, BiLogoFacebookCircle } from "react-icons/bi";
 
 const Header = ({ children }) => {
 	return (
@@ -10,10 +11,10 @@ const Header = ({ children }) => {
 
 const ClickedMenu = ({ handleMenuClick }) => {
 	const links = [
-		{name:'> ABOUT', href:'/about'},
+		{name:'> MAIN', href:'/'},
 		{name:'> STORE', href:'/store'},
 		{name:'> EVENTS', href:'/events'},
-		{name:'> CONTACT', href:'/about#contact'},
+		{name:'> ABOUT', href:'/about'},
 	]
 	const listItems = links.map((link)=>
 		<li key={link.name}>
@@ -23,9 +24,23 @@ const ClickedMenu = ({ handleMenuClick }) => {
 		</li>
 	)
 	return (
+		<>
 		<ul className="self-center">
 			{listItems}
-		</ul>	
+		</ul>
+		<ul className='fixed z-20 bottom-0 right-0 flex flex-row mr-7 mb-5 gap-5'>
+			<li>
+				<a href="https://www.instagram.com/s0czew/">
+					<BiLogoInstagram size="64px" />
+				</a>
+			</li>
+			<li>
+				<a href="https://www.facebook.com/profile.php?id=100086122046455">
+					<BiLogoFacebookCircle size="60px"/>
+				</a>
+			</li>
+		</ul>
+		</>
 	)
 }
 
@@ -33,14 +48,14 @@ const NotClickedMenu = () => {
 	return (
 		<>
 		<div className='fixed z-20 bottom-0 left-0 origin-top-left -rotate-90 translate-y-full'>
-			<a href="./about">
+			<a href="/about">
 				<Header>
 					©SOCZEW
 				</Header>
 			</a>
 		</div>
 		<div className='fixed z-20 top-0 right-0 origin-top-left rotate-90 translate-x-full'>
-			<a href="./store">
+			<a href="/store">
 				<Header>
 					STORE
 				</Header>
@@ -56,7 +71,7 @@ export function Navigation({ isScrollable }) {
 		setMenuClicked(!menuClicked)
 	}
 	const navBlur = {
-		backdropFilter: 'blur(20px)',
+		backdropFilter: 'blur(20px) contrast(70%) brightness(1.2)',
 		position: 'fixed',
 	}
 

@@ -3,7 +3,7 @@ import Overlay from './Overlay'
 import MainBg from './three_components/MainBg'
 
 function Hero() {
-  const startingID = 4
+  const startingID = 2
   const [posterTexturePath, setPosterTexturePath] = useState(`./textures/${startingID}.jpg`)
   const [selectedEventID, setSelectedEventID] = useState(startingID)
 	const handleEventListMouseEnter = (id) => {

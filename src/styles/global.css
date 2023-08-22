@@ -1,15 +1,43 @@
-@layer {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
     .my-link-style:active {
         background-color: black;
         color: white;
     }
+    .my-link-inverted:active {
+        background-color: white;
+        color: black;
+    }
     @media (min-width: 640px) {
         .my-link-style:hover {
-            --tw-bg-opacity: 1;
-            background-color: rgb(0 0 0 / var(--tw-bg-opacity));
-            --tw-text-opacity: 1;
-            color: rgb(255 255 255 / var(--tw-text-opacity));
+            background-color: black;
+            color: white;
+        }
+        .my-link-inverted:hover {
+            background-color: white;
+            color: black;
         }
     }
-    
+
+    .my-description-style {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        list-style: circle;
+    }
+    .my-description-style * {
+        list-style: square;
+        list-style-position: inside;
+        line-height: 1.75em;
+    }
+    .my-description-style a {
+        font-weight: 600;
+    }
+    .my-description-style a:hover, .my-description-style a:active {
+        background-color: black;
+        color: white;
+    }
 }
