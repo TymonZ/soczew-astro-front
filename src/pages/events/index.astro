@@ -10,7 +10,7 @@ const pageTitle = 'events | soczew'
     <section class="w-full flex flex-col justify-center items-center py-[100px]">
         {EVENTS.map((event)=>
             <section>
-                <a href={`./${slugify(event.name)}`}>{event.name}</a>
+                <a href={`/events/${slugify(event.name)}`}>{event.name}</a>
             </section>
         )}
     </section>
