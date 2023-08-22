@@ -1,4 +1,6 @@
 import { Navigation } from "./Navigation"
+import { EVENTS } from "../consts"
+import slugify from "../scripts/slugify"
 
 function EventList({ events, handleEventMouseEnter }) {
 	const listItems = events.map((event)=>
@@ -6,12 +8,12 @@ function EventList({ events, handleEventMouseEnter }) {
 			key={event.id} 
 			className="text-right font-display text-sm"
 		>
-			<span 
-				className="px-2 my-link-style"
+			<a
+				href={`/events/${slugify(event.name)}`}
 				onMouseEnter={()=>handleEventMouseEnter(event.id)}
 			>
-				{event.name} | {event.place} | {event.date}
-			</span>
+				<span className="px-2 my-link-style">{event.name} | {event.place} | {event.date}</span>
+			</a>
 		</li>
 	)
 
@@ -24,7 +26,7 @@ function EventList({ events, handleEventMouseEnter }) {
 				{listItems}
 			</ol>
 			<div className="text-right font-display font-bold text-sm">
-				<a href="./archive" className="my-link-style px-2" onMouseEnter={()=>handleEventMouseEnter('default')}>
+				<a href="/archive" className="my-link-style px-2" onMouseEnter={()=>handleEventMouseEnter('default')}>
 					{'> see more'}
 				</a>
 			</div>
@@ -34,12 +36,14 @@ function EventList({ events, handleEventMouseEnter }) {
 
 function EventWidget({ events, selectedEventID }) {
 	const selectedEvent = events.filter(e => e.id == selectedEventID)[0]
-	
+	const eventURL = `/events/${slugify(selectedEvent.name)}`
+	const linkText = '> read more'
+
 	const style = {
 		top: '50vh',
 		left: '50vw',
 	}
-	const linkText = '> read more'
+	
 	return (
 		<div className="absolute z-10 p-3 bg-black text-white flex flex-col" style={style}>
 			<h2 className="font-body">
@@ -60,14 +64,15 @@ function EventWidget({ events, selectedEventID }) {
 				</ul>
 			</div>
 			
-			<a href="./store" className="font-display text-sm hover:font-bold">
+			<a href={eventURL} className="font-display text-sm hover:font-bold">
 				{linkText}
 			</a>
 		</div>
 	)
 }
 
-function Overlay({ events, handleEventListMouseEnter, selectedEventID, showEventWidget }) {
+function Overlay({ handleEventListMouseEnter, selectedEventID, showEventWidget }) {
+	const events = EVENTS
 	return (
 		<>
 		<Navigation isScrollable={false}/>

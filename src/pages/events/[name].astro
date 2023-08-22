@@ -1,0 +1,30 @@
+---
+import ScrollableLayout from "../../layouts/ScrollableLayout.astro";
+import slugify from "../../scripts/slugify"
+import { EVENTS } from "../../consts";
+
+export async function getStaticPaths() {
+	const paths = EVENTS.map((e)=>{
+		return {
+			params: {name: slugify(e.name)},
+			props: e
+		}
+	})
+	return paths
+}
+
+const { name, date } = Astro.props;
+---
+
+<ScrollableLayout>
+	<section class="w-full flex flex-col justify-center items-center py-20">
+        <h1 class='text-6xl font-body font-normal px-5 pb-5 mb-5'>
+            {name}
+        </h1>
+		<span>{date}</span>
+        <p class="font-body font-normal w-8/12">
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nemo doloribus facere consequatur nulla optio quae in eum. Et neque molestiae dolorem soluta iusto, cupiditate mollitia odit deleniti quasi a ullam quo debitis aliquam voluptates quam animi quae aliquid commodi ipsum consequuntur. Ipsum unde ad maiores a, quae, quia delectus, deserunt ipsam blanditiis perspiciatis numquam quisquam. Excepturi exercitationem perspiciatis similique ab voluptates quo quod harum repellat nesciunt, ducimus et ullam? Molestias at libero autem id fuga dolores nulla quisquam voluptas alias asperiores modi cum quasi repellendus aliquid, quo nam reprehenderit placeat inventore laudantium error quas et? Recusandae harum reiciendis quia explicabo.
+        </p>
+    </section>
+</ScrollableLayout>
+

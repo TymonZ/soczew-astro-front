@@ -10,10 +10,10 @@ const Header = ({ children }) => {
 
 const ClickedMenu = ({ handleMenuClick }) => {
 	const links = [
-		{name:'> ABOUT', href:'./about'},
-		{name:'> STORE', href:'./store'},
-		{name:'> ARCHIVE', href:'./archive'},
-		{name:'> CONTACT', href:'./about#contact'},
+		{name:'> ABOUT', href:'/about'},
+		{name:'> STORE', href:'/store'},
+		{name:'> EVENTS', href:'/events'},
+		{name:'> CONTACT', href:'/about#contact'},
 	]
 	const listItems = links.map((link)=>
 		<li key={link.name}>
