@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { BiLogoInstagram, BiLogoFacebookCircle } from "react-icons/bi";
 
 const Header = ({ children }) => {
@@ -67,8 +67,10 @@ const NotClickedMenu = () => {
 	
 export function Navigation({ isScrollable }) {
 	const [menuClicked, setMenuClicked] = useState(false)
+	const buttonRef = useRef(null)
 	const handleMenuClick = () => {
 		setMenuClicked(!menuClicked)
+		buttonRef.current.focus()
 	}
 	const navBlur = {
 		backdropFilter: 'blur(20px) contrast(70%) brightness(1.2)',
@@ -81,7 +83,7 @@ export function Navigation({ isScrollable }) {
 			style={menuClicked ? navBlur : {}}
 		>
 			<div className='fixed z-20 top-0 left-0'>
-				<button onClick={handleMenuClick}>
+				<button onClick={handleMenuClick} ref={buttonRef}>
 					<Header>
 						MENU
 					</Header>
