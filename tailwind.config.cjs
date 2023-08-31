@@ -14,6 +14,9 @@ module.exports = {
 				'kitch-red': '#ff0000',
 				'soczew-green': '#5cc8a0',
 			},
+			transitionProperty: {
+				'height': 'height',
+			}
 		},
 		
 	},

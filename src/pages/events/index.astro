@@ -1,16 +1,40 @@
 ---
 import ScrollableLayout from '../../layouts/ScrollableLayout.astro'
-import slugify from '../../scripts/slugify';
 import { EVENTS, WEBSITE_TITLE } from "../../consts";
+import EventCard from '../../components/EventCard.astro';
 const title = `events | ${WEBSITE_TITLE}`
 ---
 
 <ScrollableLayout title={title}>
-    <section class="w-full flex flex-col justify-center items-center py-[100px]">
-        {EVENTS.map((event)=>
-            <section>
-                <a href={`/events/${slugify(event.name)}`}>{event.name}</a>
-            </section>
-        )}
+    <section class="pt-[120px] pb-[100px] px-5 flex flex-col sm:items-center gap-14">
+        <section id="upcoming" class="flex flex-col gap-3">
+           <h1 class="flex flex-wrap gap-3">
+                <span class="w-fit px-2 font-display text-xl text-white bg-black hover:bg-kitch-red">
+                    UPCOMING EVENTS
+                </span>
+            </h1>
+            <div id="upcoming" class="w-full flex flex-wrap items-start justify-start gap-5">
+                {EVENTS.map((event)=>
+                    <EventCard event={event} />
+                )}  
+            </div> 
+        </section>
+
+        <section id="past" class="flex flex-col gap-3">
+            <h1 class="flex flex-wrap gap-3">
+                <span class="w-fit px-2 font-display text-xl text-white bg-black hover:bg-kitch-red">
+                    PAST EVENTS
+                </span>
+            </h1>
+            <div class="w-full flex flex-wrap items-start justify-start gap-5">
+                {EVENTS.map((event)=>
+                    <EventCard event={event} />
+                )}  
+            </div> 
+         </section>
     </section>
 </ScrollableLayout>
+
+<script>
+
+</script>

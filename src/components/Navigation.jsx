@@ -83,7 +83,7 @@ export function Navigation({ isScrollable }) {
 			className={`w-screen h-screen top-0 left-0 z-20 flex ${menuClicked ? 'fixed-blur' : ''}`}
 			// style={menuClicked ? navBlur : {}}
 		>
-			<div className='fixed z-20 top-0 left-0'>
+			<div className={`fixed z-20 top-0 left-0`}>
 				<button onClick={handleMenuClick} ref={buttonRef}>
 					<Header>
 						MENU

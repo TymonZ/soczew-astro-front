@@ -1,0 +1,38 @@
+---
+import slugify from '../scripts/slugify';
+
+const { event } = Astro.props
+---
+
+<section class="w-full h-96 sm:w-80 relative">
+    <a 
+        class="w-full h-full absolute group bg-black text-white border-8 border-black active:border-kitch-red sm:hover:border-kitch-red"
+        href={`/events/${slugify(event.name)}`}
+    >
+        <div class="h-32 sm:h-20 sm:group-hover:h-32">
+            <img src={`/textures/${event.id}.jpg`} class="object-cover object-top h-full w-full"/>
+        </div>
+        <div class="p-5 flex flex-col gap-2">
+            <h2 class="font-body text-2xl">
+                {event.name}
+            </h2>
+            <div class="font-display font-thin text-base text-left flex flex-row gap-2">
+                <ul>
+                    <li>date:</li>
+                    <li>type:</li>
+                    <li>place:</li>
+                    <li>tax:</li>
+                </ul>
+                <ul>
+                    <li>{event.date}</li>
+                    <li>{event.type}</li>
+                    <li>{event.place}</li>
+                    <li>{event.tax}</li>
+                </ul>
+            </div>
+            <span class="visible w-fit font-display font-bold text-base text-left">
+                {'> read more'}
+            </span>
+        </div>
+    </a>
+</section>
