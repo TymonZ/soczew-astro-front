@@ -1,8 +1,10 @@
 ---
 import ScrollableLayout from '../layouts/ScrollableLayout.astro'
+import { WEBSITE_TITLE } from '../consts'
+const title = `about | ${WEBSITE_TITLE}`
 ---
 
-<ScrollableLayout title='about | soczew'>
+<ScrollableLayout title={title}>
     <section class="w-full flex flex-col justify-center items-center py-20">
         <h1 class='text-6xl font-body font-normal px-5 pb-5 mb-5'>
             ABOUT

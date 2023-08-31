@@ -1,8 +1,10 @@
 ---
 import ScrollableLayout from '../layouts/ScrollableLayout.astro'
 import SoonPlaceholder from '../components/SoonPlaceholder.astro'
+import { WEBSITE_TITLE } from '../consts'
+const title = `store | ${WEBSITE_TITLE}`
 ---
 
-<ScrollableLayout title='store | soczew'>
+<ScrollableLayout title={title}>
     <SoonPlaceholder headerText="soon"/>
 </ScrollableLayout>

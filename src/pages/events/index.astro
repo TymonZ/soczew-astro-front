@@ -1,12 +1,11 @@
 ---
 import ScrollableLayout from '../../layouts/ScrollableLayout.astro'
 import slugify from '../../scripts/slugify';
-import { EVENTS } from "../../consts";
-
-const pageTitle = 'events | soczew'
+import { EVENTS, WEBSITE_TITLE } from "../../consts";
+const title = `events | ${WEBSITE_TITLE}`
 ---
 
-<ScrollableLayout title={pageTitle}>
+<ScrollableLayout title={title}>
     <section class="w-full flex flex-col justify-center items-center py-[100px]">
         {EVENTS.map((event)=>
             <section>

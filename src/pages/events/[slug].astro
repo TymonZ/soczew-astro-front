@@ -2,7 +2,7 @@
 import { Markdown } from 'astro-remote'
 import ScrollableLayout from "../../layouts/ScrollableLayout.astro";
 import slugify from "../../scripts/slugify"
-import { EVENTS } from "../../consts";
+import { EVENTS, WEBSITE_TITLE } from "../../consts";
 
 export async function getStaticPaths() {
 	const paths = EVENTS.map((event)=>{
@@ -16,13 +16,13 @@ export async function getStaticPaths() {
 
 
 const event = Astro.props;
-const pageTitle = `${event.name} | soczew`
+const title = `${event.name} | ${WEBSITE_TITLE}`
 const bannerSrc = `/textures/${event.id}.jpg`
 const descriptions = await Astro.glob(`../../content/*.md`)
 const EventDescription = descriptions[event.id].Content
 ---
 
-<ScrollableLayout title={pageTitle}>
+<ScrollableLayout title={title}>
 	<article class="w-full flex flex-col py-[100px] sm:flex-row sm:pr-2 sm:justify-center">
 		<figure class="w-full sm:w-auto flex flex-col items-start">
 			<a href={bannerSrc}>

@@ -1,11 +1,13 @@
 ---
 import Head from '../components/Head.astro';
 import Hero from '../components/Hero.jsx';
+import { WEBSITE_TITLE } from '../consts'
+const title = `${WEBSITE_TITLE}`
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<Head title='soczew' />
+	<Head title={title} />
 	<body class="overflow-hidden">
 		<Hero client:only="react"/>
 	</body>
