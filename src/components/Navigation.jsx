@@ -72,15 +72,16 @@ export function Navigation({ isScrollable }) {
 		setMenuClicked(!menuClicked)
 		buttonRef.current.focus()
 	}
-	const navBlur = {
-		backdropFilter: 'blur(20px) contrast(70%) brightness(1.2)',
-		position: 'fixed',
-	}
+	// MOVED TO `.fixed-blur` CLASS
+	// const navBlur = {
+	// 	backdropFilter: 'blur(20px) contrast(70%) brightness(1.2)',
+	// 	position: 'fixed',
+	// }
 
 	return (
 		<nav
-			className='w-screen h-screen top-0 left-0 z-20 flex'
-			style={menuClicked ? navBlur : {}}
+			className={`w-screen h-screen top-0 left-0 z-20 flex ${menuClicked ? 'fixed-blur' : ''}`}
+			// style={menuClicked ? navBlur : {}}
 		>
 			<div className='fixed z-20 top-0 left-0'>
 				<button onClick={handleMenuClick} ref={buttonRef}>

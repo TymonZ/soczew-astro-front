@@ -40,4 +40,10 @@
         background-color: black;
         color: white;
     }
+
+    .fixed-blur {
+        -webkit-backdrop-filter: blur(20px) contrast(70%) brightness(1.2);
+        backdrop-filter: blur(20px) contrast(70%) brightness(1.2);
+        position: fixed;
+    }
 }
