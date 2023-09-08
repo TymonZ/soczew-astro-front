@@ -19,7 +19,7 @@ function Hero() {
   }
 
   return (
-    <main>
+    <section className='bg-white'>
       <MainBg 
         posterTexturePath={posterTexturePath} 
         handlePosterClick={handlePosterClick}
@@ -29,7 +29,7 @@ function Hero() {
         selectedEventID={selectedEventID}
         showEventWidget={showEventWidget}
       />
-    </main>
+    </section>
   )
 }
 

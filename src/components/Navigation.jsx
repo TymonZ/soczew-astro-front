@@ -1,13 +1,6 @@
 import { useState, useRef } from "react"
 import { BiLogoInstagram, BiLogoFacebookCircle } from "react-icons/bi";
-
-const Header = ({ children }) => {
-	return (
-		<h1 className='text-6xl font-body font-normal p-5 w-fit my-link-style'>
-			{children}
-		</h1>
-	)
-}
+import { Header } from "./Header";
 
 const ClickedMenu = ({ handleMenuClick }) => {
 	const links = [
@@ -43,27 +36,6 @@ const ClickedMenu = ({ handleMenuClick }) => {
 		</>
 	)
 }
-
-const NotClickedMenu = () => {
-	return (
-		<>
-		<div className='fixed z-20 bottom-0 left-0 origin-top-left -rotate-90 translate-y-full'>
-			<a href="/about">
-				<Header>
-					©SOCZEW
-				</Header>
-			</a>
-		</div>
-		<div className='fixed z-20 top-0 right-0 origin-top-left rotate-90 translate-x-full'>
-			<a href="/store">
-				<Header>
-					STORE
-				</Header>
-			</a>
-		</div>
-		</>
-	)
-}
 	
 export function Navigation({ isScrollable }) {
 	const [menuClicked, setMenuClicked] = useState(false)
@@ -72,11 +44,6 @@ export function Navigation({ isScrollable }) {
 		setMenuClicked(!menuClicked)
 		buttonRef.current.focus()
 	}
-	// MOVED TO `.fixed-blur` CLASS
-	// const navBlur = {
-	// 	backdropFilter: 'blur(20px) contrast(70%) brightness(1.2)',
-	// 	position: 'fixed',
-	// }
 
 	return (
 		<nav
@@ -90,7 +57,7 @@ export function Navigation({ isScrollable }) {
 					</Header>
 				</button>
 			</div>
-			{menuClicked ? <ClickedMenu handleMenuClick={handleMenuClick}/> : (isScrollable ? null : <NotClickedMenu />)}
+			{menuClicked ? <ClickedMenu handleMenuClick={handleMenuClick}/> : null}
 		</nav>
 	)
 }

@@ -1,6 +1,6 @@
-import { Navigation } from "./Navigation"
 import { EVENTS } from "../consts"
 import slugify from "../scripts/slugify"
+import { Header } from "./Header"
 
 function EventList({ events, handleEventMouseEnter }) {
 	const listItems = events.map((event)=>
@@ -75,8 +75,21 @@ function Overlay({ handleEventListMouseEnter, selectedEventID, showEventWidget }
 	const events = EVENTS
 	return (
 		<>
-		<Navigation isScrollable={false}/>
-
+		<div className='absolute z-10 bottom-0 left-0 origin-top-left -rotate-90 translate-y-full'>
+			<a href="/about">
+				<Header>
+					©SOCZEW
+				</Header>
+			</a>
+		</div>
+		<div className='absolute z-10 top-0 right-0 origin-top-left rotate-90 translate-x-full'>
+			<a href="/store">
+				<Header>
+					STORE
+				</Header>
+			</a>
+		</div>
+		
 		{ showEventWidget ? 
 			<EventWidget events={events} selectedEventID={selectedEventID} /> 
 			: null
