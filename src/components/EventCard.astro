@@ -4,7 +4,7 @@ import slugify from '../scripts/slugify';
 const { event } = Astro.props
 ---
 
-<section class="w-full h-96 sm:w-80 relative">
+<section class="w-full h-[400px] sm:w-80 relative">
     <a 
         class="w-full h-full absolute group bg-black text-white border-8 border-black active:border-kitch-red sm:hover:border-kitch-red"
         href={`/events/${slugify(event.name)}`}

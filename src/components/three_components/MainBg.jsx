@@ -1,6 +1,6 @@
 import { Suspense, useRef } from 'react'
-import { Vector3 } from 'three'
-import { Canvas, useFrame, useThree } from '@react-three/fiber'
+import { Vector3, TextureLoader } from 'three'
+import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import { Preload  } from '@react-three/drei'
 import { Poster } from './Poster'
 
@@ -40,19 +40,35 @@ function AnimatedBlock({ children }) {
 
 function MainBg({ posterTexturePath, handlePosterClick }) {	
 	return (
-		<div id='mainBg' className='w-screen h-screen absolute top-0 left-0 z-10'>
-			<Canvas shadows camera={{position: [0,0,5]}}>
-				<Suspense fallback={<CanvasLoader />}>
-					<AnimatedBlock>
-						<Poster texturePath={posterTexturePath} handleClick={handlePosterClick} />	
-					</AnimatedBlock>
-					<ambientLight intensity={0} />
-					<spotLight position={[10, 10, 10]} angle={0.5} power={4500} />
-					<CameraRig />
-				</Suspense>
-				<Preload all />
-			</Canvas>
-		</div>
+		<>
+			<div id='3dPoster' className='w-screen h-screen absolute top-0 left-0 z-10'>
+				<Canvas shadows camera={{position: [0,0,5]}}>
+					<Suspense fallback={<CanvasLoader />}>
+						<AnimatedBlock>
+							<Poster texturePath={posterTexturePath} handleClick={handlePosterClick} />	
+						</AnimatedBlock>
+						<ambientLight intensity={0} />
+						<spotLight position={[10, 10, 10]} angle={0.5} power={4500} />
+						<CameraRig />
+					</Suspense>
+					<Preload all />
+				</Canvas>
+			</div>
+			<div 
+				id='mainBackground' 
+				className='w-screen h-screen absolute top-0 left-0 z-0 flex justify-center items-center'
+				style={{
+					filter: 'contrast(0.3) brightness(2) blur(80px)'
+				}}
+			>
+				<img 
+					src={posterTexturePath} 
+					style={{
+						width: '200vw',
+					}}
+				/>
+			</div>
+		</>
 	)
 }
 
