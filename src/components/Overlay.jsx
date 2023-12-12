@@ -6,7 +6,7 @@ function EventList({ events, handleEventMouseEnter }) {
 	const listItems = events.map((event)=>
 		<li 
 			key={event.id} 
-			className={`text-right font-display text-sm ${(event.id >= events.length-4) ? '' : 'hidden'}`}
+			className={`text-right font-display ${(event.id >= events.length-4) ? '' : 'hidden'}`}
 		>
 			<a
 				href={`/events/${slugify(event.name)}`}
@@ -19,14 +19,14 @@ function EventList({ events, handleEventMouseEnter }) {
 	)
 
 	return (
-		<div className="p-5 flex flex-col gap-1" style={{maxWidth: '85vw'}}>
-			<h2 className="text-right font-display font-bold text-sm px-2">
+		<div className="p-5 flex flex-col gap-1 text-xs sm:text-sm" style={{maxWidth: '85vw'}}>
+			<h2 className="text-right font-display font-bold px-2">
 				=== PAST EVENTS ===
 			</h2>
 			<menu className="flex flex-col-reverse justify-end gap-1 sm:gap-0">
 				{listItems}
 			</menu>
-			<div className="text-right font-display font-bold text-sm">
+			<div className="text-right font-display font-bold">
 				<a href="/events" className="my-link-style px-2" onMouseEnter={()=>handleEventMouseEnter('default')}>
 					{'> see more'}
 				</a>
