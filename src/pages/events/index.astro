@@ -6,17 +6,17 @@ const title = `events | ${WEBSITE_TITLE}`
 ---
 
 <ScrollableLayout title={title}>
-    <section class="pt-[120px] pb-[100px] flex flex-col items-center justify-center gap-14">
-        <section class="flex flex-col gap-3 sm:max-w-5xl">
+    <section class="pt-[120px] pb-[100px] flex flex-col items-center justify-center gap-14 px-6">
+        <section class="flex flex-col gap-3 w-80 lg:w-fit">
             <h1 class="flex flex-col sm:flex-wrap gap-3">
                 <span class="w-fit px-2 font-display text-xl text-white bg-black hover:bg-kitch-red">
                     PAST EVENTS
                 </span>
             </h1>
-            <div class="w-full flex flex-col sm:flex-wrap items-start justify-start gap-5">
+            <div class="w-full lg:w-[1000px] flex flex-wrap items-start justify-start gap-5">
                 {EVENTS.slice(0).reverse().map((event)=>
                     <EventCard event={event} />
-                )}
+                )}  
             </div> 
          </section>
     </section>
