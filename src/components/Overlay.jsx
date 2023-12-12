@@ -6,7 +6,7 @@ function EventList({ events, handleEventMouseEnter }) {
 	const listItems = events.map((event)=>
 		<li 
 			key={event.id} 
-			className="text-right font-display text-sm"
+			className={`text-right font-display text-sm ${(event.id >= events.length-4) ? '' : 'hidden'}`}
 		>
 			<a
 				href={`/events/${slugify(event.name)}`}

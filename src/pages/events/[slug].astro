@@ -52,7 +52,7 @@ const EventDescription = descriptions[event.id].Content
 					</ul>
 				</div>
 				<a href={event.links.fb} class="w-fit my-link-inverted font-display font-bold text-base text-left">
-					{'> see event on facebook'}
+					{event.links.fb ? '> see event on facebook' : ''}
 				</a>
 			</header>
 			<section class="flex flex-col gap-2">

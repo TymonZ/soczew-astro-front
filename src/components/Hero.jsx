@@ -1,9 +1,10 @@
 import { useState } from 'react'
+import { EVENTS } from '../consts'
 import Overlay from './Overlay'
 import MainBg from './three_components/MainBg'
 
 function Hero() {
-  const startingID = 2
+  const startingID = EVENTS.length-1 // poster of the latest event
   const [posterTexturePath, setPosterTexturePath] = useState(`./textures/${startingID}.jpg`)
   const [selectedEventID, setSelectedEventID] = useState(startingID)
 	const handleEventListMouseEnter = (id) => {
