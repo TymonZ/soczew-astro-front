@@ -8,7 +8,7 @@ export const EVENTS = [
 	{
 	    id: 0,
 	    name: 'Rytuał Inicjacja',
-	    date: '19.11.22',
+	    date: '09-11.09.22',
 	    place: 'Bąk',
   		type: 'festival',
   		tax: '20pln',
@@ -77,7 +77,7 @@ export const EVENTS = [
 		id: 4,
 		name: 'Lecznica Serc',
 		date: '18.02.23',
-		place: 'Goyki 3 Art Incubator',
+		place: 'Goyki 3',
   		type: 'tatoo convention',
   		tax: 'free',
 		links: {fb: 'https://www.facebook.com/events/571131681708421/'},
