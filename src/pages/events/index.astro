@@ -7,14 +7,14 @@ const title = `events | ${WEBSITE_TITLE}`
 
 <ScrollableLayout title={title}>
     <section class="pt-[120px] pb-[100px] flex flex-col items-center justify-center gap-14">
-        <section id="past" class="flex flex-col gap-3 max-w-5xl">
-            <h1 class="flex flex-wrap gap-3">
+        <section class="flex flex-col gap-3 sm:max-w-5xl">
+            <h1 class="flex flex-col sm:flex-wrap gap-3">
                 <span class="w-fit px-2 font-display text-xl text-white bg-black hover:bg-kitch-red">
                     PAST EVENTS
                 </span>
             </h1>
-            <div class="w-full flex flex-wrap items-start justify-start gap-5">
-                {EVENTS.reverse().map((event)=>
+            <div class="w-full flex flex-col sm:flex-wrap items-start justify-start gap-5">
+                {EVENTS.slice(0).reverse().map((event)=>
                     <EventCard event={event} />
                 )}  
             </div> 
