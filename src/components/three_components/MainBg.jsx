@@ -58,7 +58,9 @@ function MainBg({ posterTexturePath, handlePosterClick }) {
 				id='mainBackground' 
 				className='w-screen h-screen absolute top-0 left-0 z-0 flex justify-center items-center'
 				style={{
-					filter: 'contrast(0.35) brightness(2) blur(80px)'
+					filter: 'contrast(0.35) brightness(2) blur(80px)',
+					WebkitFilter: 'contrast(0.35) brightness(2) blur(80px)', //text
+					transform: 'translate3d(0, 0, 0)',
 				}}
 			>
 				<img src={posterTexturePath} className='sm:w-[200vw]'/>

@@ -12,17 +12,18 @@ function EventList({ events, handleEventMouseEnter }) {
 				href={`/events/${slugify(event.name)}`}
 				onMouseEnter={()=>handleEventMouseEnter(event.id)}
 			>
-				<span className="px-2 my-link-style">{event.name} | {event.place} | {event.date}</span>
+				<span className="hidden sm:inline px-2 my-link-style">{event.name} | {event.place} | {event.date}</span>
+				<span className="sm:hidden px-2 my-link-style">{event.name} | {event.date}</span>
 			</a>
 		</li>
 	)
 
 	return (
-		<div className="p-5" style={{maxWidth: '85vw'}}>
+		<div className="p-5 flex flex-col gap-1" style={{maxWidth: '85vw'}}>
 			<h2 className="text-right font-display font-bold text-sm px-2">
 				=== PAST EVENTS ===
 			</h2>
-			<menu className="flex flex-col-reverse justify-end gap-2 sm:gap-0">
+			<menu className="flex flex-col-reverse justify-end gap-1 sm:gap-0">
 				{listItems}
 			</menu>
 			<div className="text-right font-display font-bold text-sm">
