@@ -22,7 +22,7 @@ function EventList({ events, handleEventMouseEnter }) {
 			<h2 className="text-right font-display font-bold text-sm px-2">
 				=== PAST EVENTS ===
 			</h2>
-			<menu className="flex flex-col-reverse justify-end">
+			<menu className="flex flex-col-reverse justify-end gap-2 sm:gap-0">
 				{listItems}
 			</menu>
 			<div className="text-right font-display font-bold text-sm">
@@ -45,7 +45,7 @@ function EventWidget({ events, selectedEventID }) {
 	}
 	
 	return (
-		<div className="absolute z-10 p-3 bg-black text-white flex flex-col" style={style}>
+		<div className="absolute z-20 p-3 bg-black text-white flex flex-col" style={style}>
 			<h2 className="font-body">
 				{selectedEvent.name}
 			</h2>

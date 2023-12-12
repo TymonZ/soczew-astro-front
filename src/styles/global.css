@@ -46,4 +46,11 @@
         backdrop-filter: blur(20px) contrast(70%) brightness(1.2);
         position: fixed;
     }
+
+    .my-invert-filter {
+        mix-blend-mode: difference;
+
+        /* filter-invert works only of bg is lighter than the foreground */
+        filter: invert(100%);
+    }
 }

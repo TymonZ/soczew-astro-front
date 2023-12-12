@@ -37,7 +37,7 @@ const ClickedMenu = ({ handleMenuClick }) => {
 	)
 }
 	
-export function Navigation({ isScrollable }) {
+export function Navigation() {
 	const [menuClicked, setMenuClicked] = useState(false)
 	const buttonRef = useRef(null)
 	const handleMenuClick = () => {
