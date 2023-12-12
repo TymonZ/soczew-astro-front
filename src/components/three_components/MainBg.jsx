@@ -58,15 +58,10 @@ function MainBg({ posterTexturePath, handlePosterClick }) {
 				id='mainBackground' 
 				className='w-screen h-screen absolute top-0 left-0 z-0 flex justify-center items-center'
 				style={{
-					filter: 'contrast(0.3) brightness(2) blur(80px)'
+					filter: 'contrast(0.35) brightness(2) blur(80px)'
 				}}
 			>
-				<img 
-					src={posterTexturePath} 
-					style={{
-						width: '200vw',
-					}}
-				/>
+				<img src={posterTexturePath} className='sm:w-[200vw]'/>
 			</div>
 		</>
 	)
