@@ -21,9 +21,9 @@ const { title } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
     <title>{title}</title>
-    <meta content="s0czew association" property="og:title" />
+    <meta content={title} property="og:title" />
     <meta content="//\/\/\\\/\/\/\/\////\\\//\//\" property="og:description" />
     <!-- <meta content="https://embed.com/this-is-the-site-url" property="og:url" /> -->
-    <meta content="https://soczew-astro-front.vercel.app/textures/5.jpg" property="og:image" />
-    <meta content="#00ff00" data-react-helmet="true" name="theme-color" />
+    <!-- <meta content="https://soczew-astro-front.vercel.app/textures/5.jpg" property="og:image" /> -->
+    <!-- <meta content="#00ff00" data-react-helmet="true" name="theme-color" /> -->
 </head>
