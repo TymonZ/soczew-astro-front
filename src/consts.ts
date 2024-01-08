@@ -107,4 +107,21 @@ export const EVENTS = [
 		},
 		// description: 'https://example.server/api/description-id.md'
 	},
+	{
+		id: 6,
+		name: 'Magazyn Market',
+		date: '24.09.23',
+		place: 'Grunwaldzka 303b',
+  		type: 'fair',
+  		tax: 'free',
+		links: {fb: 'https://www.facebook.com/events/661905509382539/'},
+		poster: {
+			// url: 'https://example.server/api/poster-id.jpg',
+			author: {
+				name: 'Kasia Miotke',
+				url: 'https://www.instagram.com/08.00.80/'
+			}
+		},
+		// description: 'https://example.server/api/description-id.md'
+	},
 ]
