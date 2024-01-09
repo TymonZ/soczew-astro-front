@@ -78,7 +78,7 @@ export const EVENTS = [
 		name: 'Lecznica Serc',
 		date: '18.02.23',
 		place: 'Goyki 3',
-  		type: 'tatoo convention',
+  		type: 'tattoo convention',
   		tax: 'free',
 		links: {fb: 'https://www.facebook.com/events/571131681708421/'},
 		poster: {
