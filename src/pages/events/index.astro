@@ -3,9 +3,11 @@ import ScrollableLayout from '../../layouts/ScrollableLayout.astro'
 import { EVENTS, WEBSITE_TITLE } from "../../consts";
 import EventCard from '../../components/EventCard.astro';
 const title = `events | ${WEBSITE_TITLE}`
+const description = "Wydarzena stworzone przez Soczew"
+const image = `/textures/${EVENTS.slice(0).reverse()[0].id}.jpg`
 ---
 
-<ScrollableLayout title={title}>
+<ScrollableLayout title={title} description={description} image={image}>
     <section class="pt-[120px] pb-[100px] flex flex-col items-center justify-center gap-14 px-6">
         <section class="flex flex-col gap-3 w-80 lg:w-fit">
             <h1 class="flex flex-col sm:flex-wrap gap-3">

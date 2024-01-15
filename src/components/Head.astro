@@ -1,16 +1,46 @@
 ---
 import '../styles/global.css';
+import { SEO } from 'astro-seo';
 
 interface Props {
 	title: string;
+	description: string;
+    image: string;
 }
 
-const { title } = Astro.props;
+const { title, description, image } = Astro.props;
 ---
 
 <head>
+    <SEO
+        title={title}
+        description={description}
+        openGraph={{
+            basic: {
+            title: title,
+            type: "website",
+            image: image,
+            }
+        }}
+        twitter={{
+            creator: "@s0czew"
+        }}
+        extend={{
+            // extending the default link tags
+            link: [{ rel: "icon", href: "/logo/logo-black.svg" }],
+            // extending the default meta tags
+            meta: [
+            {
+                name: "twitter:image",
+                content: image,
+            },
+            { name: "twitter:title", content: title },
+            { name: "twitter:description", content: description },
+            ],
+        }}
+    />
+
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/logo/logo-black.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
 
@@ -20,11 +50,4 @@ const { title } = Astro.props;
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500&display=swap" rel="stylesheet"></link>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-    
-    <title>{title}</title>
-    <meta content={title} property="og:title" />
-    <meta content="//\/\/\\\/\/\/\/\////\\\//\//\" property="og:description" />
-    <!-- <meta content="https://embed.com/this-is-the-site-url" property="og:url" /> -->
-    <!-- <meta content="https://soczew-astro-front.vercel.app/textures/5.jpg" property="og:image" /> -->
-    <!-- <meta content="#00ff00" data-react-helmet="true" name="theme-color" /> -->
 </head>

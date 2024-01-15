@@ -22,7 +22,7 @@ const descriptions = await Astro.glob(`../../content/*.md`)
 const EventDescription = descriptions[event.id].Content
 ---
 
-<ScrollableLayout title={title}>
+<ScrollableLayout title={title} description={descriptions[event.id].frontmatter.desc} image={bannerSrc}>
 	<article class="w-full flex flex-col py-[100px] sm:flex-row sm:pr-2 sm:justify-center">
 		<figure class="w-full sm:w-auto flex flex-col items-start">
 			<a href={bannerSrc}>

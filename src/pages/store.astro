@@ -3,8 +3,10 @@ import ScrollableLayout from '../layouts/ScrollableLayout.astro'
 import SoonPlaceholder from '../components/SoonPlaceholder.astro'
 import { WEBSITE_TITLE } from '../consts'
 const title = `store | ${WEBSITE_TITLE}`
+const description = "Soon to be announced."
+const image = ""
 ---
 
-<ScrollableLayout title={title}>
+<ScrollableLayout title={title} description={description} image={image}>
     <SoonPlaceholder headerText="soon"/>
 </ScrollableLayout>

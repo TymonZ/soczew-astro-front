@@ -6,11 +6,13 @@ import { WEBSITE_TITLE } from '../consts'
 import AboutSection from "../components/AboutSection.astro";
 import Footer from "../components/Footer.astro";
 const title = `${WEBSITE_TITLE}`
+const description = "Jesteśmy organizacją zrzeszająca młodych artystów z różnych dziedzin sztuki. Nasze działania skupiają się na stwarzaniu immersyjnych przeżyć audio-wizualnych. Stawiamy na niepowtarzalność i różnorodność doświadczeń. W ramach naszej działalności prowadzimy warsztaty i wystawy, dzięki którym dzielimy się naszym doświadczeniem oraz dajemy wschodzącym artystom przestrzeń do zaprezentowania się. Przygotowujemy eventy klubowe, w których muzyka łączy się z sztuką. Nasze wydarzenia cechują się różnorodnością gatunków muzycznych, otwierając przestrzeń do eksploracji dźwięków i tworząc inspirujące środowisko dla szerokiej gamy artystów."
+const image = "/thumbnails/index.png"
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<Head title={title} />
+	<Head title={title} description={description} image={image} />
 	<body class="overflow-hidden">
 		<Navigation client:only="react"/>
 		<main>
