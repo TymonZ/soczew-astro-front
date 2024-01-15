@@ -2,6 +2,7 @@ import { Suspense, useRef } from 'react'
 import { Vector3, TextureLoader } from 'three'
 import { Canvas, useFrame, useLoader, useThree } from '@react-three/fiber'
 import { Preload  } from '@react-three/drei'
+import { Soczewiak } from './Soczewiak'
 import { Poster } from './Poster'
 
 function CanvasLoader() {
@@ -38,14 +39,19 @@ function AnimatedBlock({ children }) {
 	)
 }
 
-function MainBg({ posterTexturePath, handlePosterClick }) {	
+function MainBg({ posterTexturePath, handlePosterClick, handleSoczewiakClick, currentModel }) {	
+	const models = {
+		Soczewiak : <Soczewiak handleClick={handleSoczewiakClick}/>,
+		Poster: <Poster texturePath={posterTexturePath} handleClick={handlePosterClick} />
+	}
+
 	return (
 		<>
 			<div id='3dPoster' className='w-screen h-screen absolute top-0 left-0 z-10'>
 				<Canvas shadows camera={{position: [0,0,5]}}>
 					<Suspense fallback={<CanvasLoader />}>
 						<AnimatedBlock>
-							<Poster texturePath={posterTexturePath} handleClick={handlePosterClick} />	
+							{models[currentModel]}
 						</AnimatedBlock>
 						<ambientLight intensity={0} />
 						<spotLight position={[10, 10, 10]} angle={0.5} power={4500} />

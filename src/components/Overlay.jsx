@@ -27,7 +27,7 @@ function EventList({ events, handleEventMouseEnter }) {
 				{listItems}
 			</menu>
 			<div className="text-right font-display font-bold">
-				<a href="/events" className="my-link-style px-2" onMouseEnter={()=>handleEventMouseEnter('default')}>
+				<a href="/events" className="my-link-style px-2" onMouseEnter={()=>handleEventMouseEnter('seemore')}>
 					{'> see more'}
 				</a>
 			</div>
