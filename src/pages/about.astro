@@ -5,24 +5,47 @@ const title = `about | ${WEBSITE_TITLE}`
 ---
 
 <ScrollableLayout title={title}>
-    <section class="w-full flex flex-col justify-center items-center py-40">
-        <h1 class='text-6xl font-body font-normal px-5 pb-5 mb-5'>
-            ABOUT
-        </h1> 
-        <div class="flex flex-col gap-5 w-4/5 sm:w-1/2 justify-center items-center [&>*]:font-display [&>*]:font-normal [&>*]:text-center">
-            <p>
-                S0czew skupiająca. 
-            </p>
-            <p>
-                Jesteśmy organizacją zrzeszająca młodych artystów z różnych dziedzin sztuki. 
-            </p>
-            <p>
-                Nasze działania skupiają się na stwarzaniu imersyjnych przeżyć audio-wizualnych. Stawiamy na niepowtarzalonść i różnorodność doświadczeń.  W ramach naszej działalności prowadzimy warsztaty i wystawy pozwalające  dzielić się naszym szerokim doświadczeniem i dając przestrzeń wzchodzącym artystom.  
-            </p>
-            <p>
-                Organizujemy imprezy klubowe łącząc muzykę ze sztuką. Charakteryzują się one wielogatunkowością, co daje możliwość eksploracji muzycznej oraz stwarza przestrzeń dogodną dla szerokiej gamy artystów.
-            </p>  
+    <div class="w-full h-full min-h-screen">
+        <section class="absolute z-10 fixed-blur-2 w-full h-fit min-h-screen flex flex-col sm:flex-row pb-40">
+            <div class="w-1/2 h-full flex justify-center pt-40 px-7">
+                <div class="w-full flex flex-col gap-10">
+                    <div>
+                        <video muted controls loop autoplay class="">
+                            <source src="/vids/bg1.mp4">
+                        </video>
+                        <figcaption class="pl-1 font-display">
+                            Video from the event <a class="my-link-style" href="/events/clayklej"}>CLAY:KLEJ</a>
+                        </figcaption>    
+                    </div>
+                    <!-- <div>
+                        <video muted controls loop autoplay class="">
+                            <source src="/vids/bg1.mp4">
+                        </video>
+                        <figcaption class="pl-1 font-display">
+                            Video from the event <a class="my-link-style" href="/events/clayklej"}>CLAY:KLEJ</a>
+                        </figcaption>    
+                    </div> -->
+                </div>
+            </div>
+            <div class="w-1/2 pt-40 pl-7 pr-20 flex flex-col gap-5">
+                <h1 class="text-3xl font-display font-bold">
+                    S0czew skupiająca
+                </h1>
+                <div class="flex flex-col gap-3 font-paragraph">
+                    <p>Jesteśmy organizacją zrzeszająca młodych artystów z różnych dziedzin sztuki.</p>
+                    <p>Nasze działania skupiają się na stwarzaniu immersyjnych przeżyć audio-wizualnych.</p>
+                    <p>Stawiamy na niepowtarzalność i różnorodność doświadczeń.</p>
+                    <p>W ramach naszej działalności prowadzimy warsztaty i wystawy, dzięki którym dzielimy się naszym doświadczeniem oraz dajemy wschodzącym artystom przestrzeń do zaprezentowania się.</p>
+                    <p>Przygotowujemy eventy klubowe, w których muzyka łączy się z sztuką. Nasze wydarzenia cechują się różnorodnością gatunków muzycznych, otwierając przestrzeń do eksploracji dźwięków i tworząc inspirujące środowisko dla szerokiej gamy artystów.</p> 
+                </div>
+                
+            </div>
+        </section>    
+        <div class="fixed z-0 w-screen h-screen">
+            <video muted loop autoplay class="w-full h-full object-cover absolute">
+                <source src="/vids/bg1.mp4">
+            </video>
         </div>
-    </section>
+    </div>
 </ScrollableLayout>
 

@@ -52,6 +52,11 @@
         position: fixed;
     }
 
+    .fixed-blur-2 {
+        -webkit-backdrop-filter: blur(30px) contrast(30%) brightness(2);
+        backdrop-filter: blur(30px) contrast(30%) brightness(2);
+    }
+
     .my-invert-filter {
         mix-blend-mode: difference;
 
