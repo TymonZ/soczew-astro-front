@@ -15,9 +15,9 @@ const { title, description, image } = Astro.props;
 <!DOCTYPE html>
 <html lang="en">
 	<Head title={title}, description={description} image={image} />
-	<body class="bg-black overflow-x-hidden">
+	<body class="bg-black overflow-x-hidden h-full">
         <Navigation client:only="react"/>
-        <div class="w-screen min-h-screen absolute top-0 left-0 flex flex-col">
+        <div class="w-screen h-full min-h-screen absolute top-0 left-0 flex flex-col">
             <main class="bg-white flex-grow w-full flex flex-col">
                 <slot />
             </main>

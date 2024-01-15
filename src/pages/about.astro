@@ -7,29 +7,22 @@ const image = "/thumbnails/index.png"
 ---
 
 <ScrollableLayout title={title} description={description} image={image}>
-    <div class="w-full h-full min-h-screen">
-        <section class="absolute z-10 w-full h-fit min-h-screen flex flex-col sm:flex-row pb-40">
-            <div class="w-1/2 h-full flex justify-center pt-40 px-7">
+    <div class="w-full">
+        <section class="z-10 w-full h-fit min-h-screen flex flex-col sm:flex-row pb-40">
+            <div class="w-full sm:w-1/2 h-full flex justify-center pt-40 px-7">
                 <div class="w-full flex flex-col gap-10">
                     <div>
-                        <video muted controls loop autoplay class="">
+                        <!-- <video muted controls loop autoplay class="">
                             <source src="/vids/bg1.mp4">
-                        </video>
+                        </video> -->
+                        <img src="/vids/bg1.gif">
                         <figcaption class="pl-1 font-display">
                             Video from the event <a class="my-link-style" href="/events/clayklej"}>CLAY:KLEJ</a>
                         </figcaption>    
                     </div>
-                    <!-- <div>
-                        <video muted controls loop autoplay class="">
-                            <source src="/vids/bg1.mp4">
-                        </video>
-                        <figcaption class="pl-1 font-display">
-                            Video from the event <a class="my-link-style" href="/events/clayklej"}>CLAY:KLEJ</a>
-                        </figcaption>    
-                    </div> -->
                 </div>
             </div>
-            <div class="w-1/2 pt-40 pl-7 pr-20 flex flex-col gap-6">
+            <div class="w-full sm:w-1/2 pt-20 sm:pt-40 pl-7 pr-7 sm:pr-20 flex flex-col gap-6">
                 <div class="flex flex-col gap-5">
                     <h1 class="text-3xl font-display font-bold">
                         S0czew skupiająca
@@ -60,16 +53,8 @@ const image = "/thumbnails/index.png"
                     </a>
                 </div>
             </div>
-        </section>    
-        <div 
-            class="fixed z-0 w-screen h-screen" 
-            style={{
-                filter: 'contrast(0.35) brightness(2) blur(80px)',
-                WebkitFilter: 'contrast(0.35) brightness(2) blur(80px)',
-                transform: 'translate3d(0, 0, 0)',
-        }}>
-            <img src="/textures/6.jpg" class="w-full h-full object-cover absolute">
-        </div>
+        </section>
     </div>
+    
 </ScrollableLayout>
 

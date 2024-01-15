@@ -47,15 +47,18 @@ export function Navigation() {
 
 	return (
 		<nav
-			className={`w-screen h-screen top-0 left-0 z-20 flex ${menuClicked ? 'fixed-blur' : ''}`}
+			className={`w-screen h-screen top-0 left-0 z-30 flex ${menuClicked ? 'fixed-blur' : ''}`}
 			// style={menuClicked ? navBlur : {}}
 		>
-			<div className={`fixed z-20 top-0 left-0`}>
+			<div className={`fixed z-30 top-0 left-0 w-full`}>
 				<button onClick={handleMenuClick} ref={buttonRef}>
 					<Header>
 						MENU
 					</Header>
 				</button>
+			</div>
+			<div className={`sm:invisible fixed z-20 top-0 left-0 w-full h-[100px] ${menuClicked ? '' : 'bg-gradient-to-b from-white to-90%'}`}>
+
 			</div>
 			{menuClicked ? <ClickedMenu handleMenuClick={handleMenuClick}/> : null}
 		</nav>
