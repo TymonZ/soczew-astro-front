@@ -2,35 +2,16 @@
 import ScrollableLayout from '../../layouts/ScrollableLayout.astro'
 import { EVENTS, WEBSITE_TITLE } from "../../consts";
 import EventCard from '../../components/EventCard.astro';
-import EventCardLoading from '../../components/EventCardLoading.astro';
 const title = `events | ${WEBSITE_TITLE}`
 const description = "Wydarzena stworzone przez Soczew"
 const image = `/textures/${EVENTS.slice(0).reverse()[0].id}.jpg`
-
-const LOADING = {
-    id: 'loading',
-    name: '??????',
-    date: '24.02.24',
-    place: '????? ???',
-    type: '???? ?????',
-    tax: '?????',
-    links: {fb: 'https://www.facebook.com/events/571131681708421/'},
-    poster: {
-        // url: 'https://example.server/api/poster-id.jpg',
-        author: {
-            name: '????? ??????',
-            url: 'https://www.instagram.com/tosiakowalczuk/'
-        }
-    },
-    // description: 'https://example.server/api/description-id.md'
-}
 ---
 
 <ScrollableLayout title={title} description={description} image={image}>
     <section class="pt-[120px] pb-[100px] flex flex-col items-center justify-center gap-14 px-6">
-        <section class="flex flex-col gap-5 w-80 lg:w-fit">
+        <section class="flex flex-col gap-3 w-80 lg:w-fit">
             <h1 class="flex flex-col sm:flex-wrap gap-3">
-                <span class="w-fit px-2 font-display text-2xl text-white bg-black hover:bg-kitch-red">
+                <span class="w-fit px-2 font-display text-xl text-white bg-black hover:bg-kitch-red">
                     PAST EVENTS
                 </span>
             </h1>
@@ -38,21 +19,7 @@ const LOADING = {
                 {EVENTS.slice(0).reverse().map((event)=>
                     <EventCard event={event} />
                 )}  
-            </div>
-         </section>
-         <section class="flex flex-col gap-5 w-80 lg:w-fit">
-            <h1 class="flex flex-col sm:flex-wrap gap-3">
-                <span class="w-fit px-2 font-display text-2xl text-white bg-black hover:bg-kitch-red">
-                    UPCOMING EVENTS
-                </span>
-            </h1>
-            <div class="w-full lg:w-[1000px] flex flex-wrap items-start justify-start gap-5">
-                <!-- <section class="h-[400px] w-80 relative">
-                    <img src="/textures/loading.gif" class="absolute top-0 left-0 h-full w-full object-cover">
-                    <h2 class="pt-5 px-6 absolute top-0 left-0 h-full w-full font-body text-2xl text-white">??????</h2>
-                </section> -->
-                <EventCardLoading event={LOADING} />
-            </div>
+            </div> 
          </section>
     </section>
 </ScrollableLayout>
