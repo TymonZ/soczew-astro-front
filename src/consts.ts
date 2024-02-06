@@ -124,4 +124,21 @@ export const EVENTS = [
 		},
 		// description: 'https://example.server/api/description-id.md'
 	},
+	{
+		id: 7,
+		name: 'ZGRZYT',
+		date: '24.02.24',
+		place: 'Drugi Dom',
+  		type: 'club event',
+  		tax: '30/40pln',
+		links: {fb: 'https://www.facebook.com/events/1533546257434119'},
+		poster: {
+			// url: 'https://example.server/api/poster-id.jpg',
+			author: {
+				name: 'Kasia Miotke',
+				url: 'https://www.instagram.com/08.00.80/'
+			}
+		},
+		// description: 'https://example.server/api/description-id.md'
+	},
 ]

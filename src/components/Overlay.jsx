@@ -21,7 +21,7 @@ function EventList({ events, handleEventMouseEnter }) {
 	return (
 		<div className="p-5 flex flex-col gap-1 text-xs sm:text-sm" style={{maxWidth: '85vw'}}>
 			<h2 className="text-right font-display font-bold px-2">
-				=== PAST EVENTS ===
+				=== EVENTS ===
 			</h2>
 			<menu className="flex flex-col-reverse justify-end gap-1 sm:gap-0">
 				{listItems}
